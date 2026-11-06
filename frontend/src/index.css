@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #f3f5fa;
+  --color-sheet: #ffffff;
+  --color-ink: #16213a;
+  --color-muted: #5a667b;
+  --color-line: #e3e8f1;
+  --color-press: #3563e9;
+  --color-press-dark: #274fc8;
+  --color-soft: #eaf0ff;
+  --color-marker: #ffe45c;
+  --color-ok: #1b7a4b;
+  --color-bad: #b3261e;
+  --color-maybe: #99600a;
+  --font-ui: "Public Sans", system-ui, sans-serif;
+  --font-article: "Source Serif 4", "Noto Serif Malayalam", Georgia, serif;
+}
+
+html,
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-ui);
+}
+
+/* Malayalam glyphs need a Malayalam-capable face even inside UI text */
+:lang(ml),
+.font-article {
+  font-family: "Source Serif 4", "Noto Serif Malayalam", Georgia, serif;
+}
+
+mark.evidence {
+  background: var(--color-marker);
+  color: inherit;
+  padding: 0.1em 0.15em;
+  border-radius: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-press);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
